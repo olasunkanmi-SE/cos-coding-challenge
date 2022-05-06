@@ -1,12 +1,29 @@
 import "reflect-metadata";
-import { Container } from "inversify";
-import { DependencyIdentifier } from "./DependencyIdentifiers";
+import { Container, ContainerModule } from "inversify";
+import { DependencyIdentifier } from "./application/constants/DependencyIdentifiers";
 // import { AuctionMonitorApp } from "./AuctionMonitorApp";
 import { InversifyExpressServer } from "inversify-express-utils";
 import bodyParser from "body-parser";
 import { ILogger } from "./infrastructure/Logger/interface/ILogger";
 import { Logger } from "./infrastructure/Logger/classes/Logger";
 import { containerBidings } from "./inversify.config";
+
+/**
+ * Start Express server
+ *
+ * @export
+ * @param {Container} container Inversify container
+ * @param {number} appPort The port on which the app needs to run
+ * @param {...ContainerModule[]} modules The container modules that needs to be loaded
+ * @returns
+ */
+// export async function main(container: Container, appPort: number, ...modules: ContainerModule[]) {
+//   const startTime = Date.now();
+//   if (container.isBound(DependencyIdentifier.App) === false) {
+//     container.load(...modules);
+//     const logger:
+//   }
+// }
 
 /*
  * Create the DI container.
