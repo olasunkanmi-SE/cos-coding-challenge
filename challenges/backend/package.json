@@ -2,9 +2,9 @@
   "name": "caronsale-coding-challenge-backend",
   "version": "1.0.0",
   "description": "CarOnSale Backend Coding Challenge",
-  "main": "dist/index.js",
+  "main": "dist/main.js",
   "scripts": {
-    "start:run": "nodemon index.js",
+    "start:run": "nodemon main.js",
     "start:build": "tsc -w",
     "start": "concurrently npm:start:*",
     "test": "./node_modules/.bin/mocha --require ts-node/register ./src/**/*.spec.ts"
