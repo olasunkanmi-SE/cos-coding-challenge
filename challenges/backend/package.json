@@ -2,9 +2,9 @@
   "name": "caronsale-coding-challenge-backend",
   "version": "1.0.0",
   "description": "CarOnSale Backend Coding Challenge",
-  "main": "dist/main.js",
+  "main": "dist/index.js",
   "scripts": {
-    "start:run": "nodemon main.js",
+    "start:run": "nodemon index.js",
     "start:build": "tsc -w",
     "start": "concurrently npm:start:*",
     "test": "./node_modules/.bin/mocha --require ts-node/register ./src/**/*.spec.ts"
@@ -16,9 +16,11 @@
   },
   "dependencies": {
     "@types/body-parser": "^1.19.2",
+    "@types/cls-hooked": "^4.3.3",
     "@types/inversify": "^2.0.33",
     "@types/node": "^14.14.21",
     "body-parser": "^1.20.0",
+    "cls-hooked": "^4.2.2",
     "concurrently": "^7.1.0",
     "express": "^4.18.1",
     "inversify": "^4.13.0",

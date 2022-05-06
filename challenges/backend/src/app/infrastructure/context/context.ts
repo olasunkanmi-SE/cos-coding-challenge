@@ -1,6 +1,6 @@
 import { injectable } from "inversify";
 import { Errors } from "../error/error";
-import { IContextManager, IContextData } from "./context-manager";
+import { IContextManager, IContextData } from "./context-manager.interface";
 import { IAuthToken } from "./security-token";
 
 /**
@@ -15,7 +15,7 @@ export class Context implements IContextManager {
   private readonly _requestTimeStamp: string;
   private readonly _additionalData: { [index: string]: any } | undefined;
   private readonly _errors: Errors;
-  private readonly _requestContext: string;
+  private readonly _requestContext?: string;
 
   /**
    * Creates an instance of Context
@@ -31,7 +31,7 @@ export class Context implements IContextManager {
   constructor(
     userId: string,
     requestTimeStamp: Date,
-    requestContext: string,
+    requestContext?: string,
     authToken?: IAuthToken,
     additionalData?: { [index: string]: any }
   ) {
@@ -40,7 +40,7 @@ export class Context implements IContextManager {
     this._requestTimeStamp = requestTimeStamp?.toISOString();
     this._additionalData = additionalData;
     this._requestContext = requestContext;
-    this._errors = new Errors(requestContext, []);
+    this._errors = new Errors([], requestContext);
   }
 
   get userId(): string {
@@ -59,7 +59,7 @@ export class Context implements IContextManager {
     return this._additionalData;
   }
 
-  get requestContext(): string {
+  get requestContext(): string | undefined {
     return this._requestContext;
   }
 

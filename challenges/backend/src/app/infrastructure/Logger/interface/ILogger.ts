@@ -9,4 +9,5 @@ import { IErrorMetadata } from "../../error/error-metadata";
  */
 export interface ILogger {
   error(message: BaseError, meta?: IErrorMetadata, errorCode?: number): Logger;
+  info(message: string, meta?: object): Logger;
 }

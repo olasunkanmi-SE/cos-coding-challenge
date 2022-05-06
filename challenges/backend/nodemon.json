@@ -1,0 +1,11 @@
+{
+  "watch": ["src/**/*.ts"],
+  "ext": "ts,js,json",
+  "ignore": [".git", "node_modules/**/nodemodules"],
+  "exec": "ts-node src/app/index.ts",
+  "verbose": true,
+  "env": {
+    "APPNAME": "car-on-sale",
+    "APP_PORT": 3000
+  }
+}

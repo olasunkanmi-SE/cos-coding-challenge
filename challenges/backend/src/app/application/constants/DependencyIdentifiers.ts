@@ -1,4 +1,6 @@
 export const DependencyIdentifier = {
-  LOGGER: "logger",
   App: Symbol("App"),
+  CurrentContext: Symbol("CurrentContext"),
+  Logger: Symbol("Logger"),
+  ConfigurationManager: Symbol("ConfigurationManager"),
 };

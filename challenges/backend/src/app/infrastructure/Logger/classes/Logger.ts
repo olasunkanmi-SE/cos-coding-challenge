@@ -3,8 +3,8 @@ import { ILogger } from "../interface/ILogger";
 import { injectable } from "inversify";
 import { Logger } from "winston";
 import { BaseError } from "../../error/base-error";
-import { IContextManager } from "../../context/context-manager";
-import { IContextData } from "./../../context/context-manager";
+import { IContextManager } from "../../context/context-manager.interface";
+import { IContextData } from "../../context/context-manager.interface";
 import { IErrorMetadata } from "./../../error/error-metadata";
 
 @injectable()
@@ -15,6 +15,11 @@ export class ApplicationLogger implements ILogger {
   constructor(currentContextManager: IContextManager, logger: Logger) {
     this._currentContextManager = currentContextManager;
     this._logger = logger;
+  }
+
+  info(message: string, meta?: object): Logger {
+    const contextData = this.getErrorContextData();
+    return this._logger.info(message, { ...contextData, ...meta });
   }
 
   error(error: BaseError, meta?: IErrorMetadata, errorCode?: number): Logger {
@@ -33,16 +38,22 @@ export class ApplicationLogger implements ILogger {
       });
     }
 
-    return this._logger.error(`{${error.code}} - {${error.name}} - {${error.description}}`, {
-      exception: { ...exception },
-      ...contextData,
-      ...meta,
-      error: { ...error },
-      errorCode,
-    });
+    return this._logger.error(
+      `{${error.code}} - {${error.name}} - {${error.description}}`,
+      {
+        exception: { ...exception },
+        ...contextData,
+        ...meta,
+        error: { ...error },
+        errorCode,
+      }
+    );
   }
 
-  private getErrorContextData(error: BaseError): IContextData {
+  private getErrorContextData(error?: BaseError): IContextData | undefined {
+    if (!error) {
+      return this._currentContextManager.getContextData();
+    }
     const contextData: IContextData = this._currentContextManager.getContextData();
     contextData.errors.errors.push(error);
     return contextData;
