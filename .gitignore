@@ -2,3 +2,4 @@
 .DS_Store
 challenges/backend/node_modules
 challenges/backend/dist
+challenges/backend/.vscode
