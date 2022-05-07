@@ -8,6 +8,7 @@ import { ApplicationLogger } from "./infrastructure/Logger/classes/Logger";
 import { IContextManager } from "./infrastructure/context/context-manager.interface";
 import { ILogger } from "./infrastructure/Logger/interface/ILogger";
 import { EnvironmentConfigurationManager } from "./infrastructure/configuration/env-config-manager";
+import { AuctionMonitorApp } from "./AuctionMonitorApp";
 
 export const containerBidings = new ContainerModule((bind: interfaces.Bind) => {
   const winstonLogger = initLogger();
@@ -29,6 +30,10 @@ export const containerBidings = new ContainerModule((bind: interfaces.Bind) => {
     .toDynamicValue(() => {
       return applicationContextLogger;
     })
+    .inSingletonScope();
+
+  bind<AuctionMonitorApp>(DependencyIdentifier.AuctionMonitorApp)
+    .to(AuctionMonitorApp)
     .inSingletonScope();
 
   HomeController;

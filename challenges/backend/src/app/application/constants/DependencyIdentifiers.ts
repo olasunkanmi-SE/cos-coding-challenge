@@ -3,4 +3,5 @@ export const DependencyIdentifier = {
   CurrentContext: Symbol("CurrentContext"),
   Logger: Symbol("Logger"),
   ConfigurationManager: Symbol("ConfigurationManager"),
+  AuctionMonitorApp: Symbol("AuctionMonitorApp"),
 };
