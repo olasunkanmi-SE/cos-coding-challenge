@@ -38,3 +38,78 @@
 [32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:21:34.018Z","userId":""}
 [32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:21:43.142Z","userId":""}
 [32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:21:43.142Z","userId":""}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:25:19.912Z","userId":""}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:25:19.912Z","userId":""}
+[32minfo[39m: Booted in: 43 {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:25:19.912Z","userId":""}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:26:06.203Z","userId":""}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:26:06.203Z","userId":""}
+[32minfo[39m: Booted in: 45 {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:26:06.203Z","userId":""}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:27:15.384Z","userId":""}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:27:15.384Z","userId":""}
+[32minfo[39m: Booted in: 56 {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:27:15.384Z","userId":""}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:30:41.022Z","userId":""}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:30:41.022Z","userId":""}
+[32minfo[39m: Booted in: 50 {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:30:41.022Z","userId":""}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:30:46.771Z","userId":""}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:30:46.771Z","userId":""}
+[32minfo[39m: Booted in: 52 {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:30:46.771Z","userId":""}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:30:52.212Z","userId":""}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:30:52.212Z","userId":""}
+[32minfo[39m: Booted in: 49 {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:30:52.212Z","userId":""}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:31:10.021Z","userId":""}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:31:10.021Z","userId":""}
+[32minfo[39m: Booted in: 42 {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:31:10.021Z","userId":""}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:32:00.176Z","userId":""}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:32:00.176Z","userId":""}
+[32minfo[39m: Booted in: 57 {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:32:00.176Z","userId":""}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:32:30.156Z","userId":""}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:32:30.156Z","userId":""}
+[32minfo[39m: Booted in: 56 {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:32:30.156Z","userId":""}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:33:48.688Z","userId":""}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:33:48.688Z","userId":""}
+[32minfo[39m: Booted in: 55 {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:33:48.688Z","userId":""}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:42:40.567Z","userId":""}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:42:40.567Z","userId":""}
+[32minfo[39m: Booted in: 49 {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:42:40.567Z","userId":""}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:43:56.619Z","userId":""}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:43:56.619Z","userId":""}
+[32minfo[39m: Booted in: 44 {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:43:56.619Z","userId":""}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:44:12.093Z","userId":""}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:44:12.093Z","userId":""}
+[32minfo[39m: Booted in: 51 {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:44:12.093Z","userId":""}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:44:18.316Z","userId":""}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:44:18.316Z","userId":""}
+[32minfo[39m: Booted in: 62 {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:44:18.316Z","userId":""}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:46:19.365Z","userId":""}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:46:19.365Z","userId":""}
+[32minfo[39m: Booted in: 37 {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:46:19.365Z","userId":""}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:46:23.608Z","userId":""}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:46:23.608Z","userId":""}
+[32minfo[39m: Booted in: 42 {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:46:23.608Z","userId":""}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:47:13.507Z","userId":""}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:47:13.507Z","userId":""}
+[32minfo[39m: Booted in: 44 {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:47:13.507Z","userId":""}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:47:32.780Z","userId":""}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:47:32.780Z","userId":""}
+[32minfo[39m: Booted in: 64 {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:47:32.780Z","userId":""}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:48:07.137Z","userId":""}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:48:07.137Z","userId":""}
+[32minfo[39m: Booted in: 43ms. {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:48:07.137Z","userId":""}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:48:58.783Z","userId":""}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:48:58.783Z","userId":""}
+[32minfo[39m: Booted in: 38ms. {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:48:58.783Z","userId":""}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:52:28.433Z","userId":""}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:52:28.433Z","userId":""}
+[32minfo[39m: Booted in: 50ms. {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:52:28.433Z","userId":""}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:53:22.664Z","userId":""}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:53:22.664Z","userId":""}
+[32minfo[39m: Booted in: 42ms. {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:53:22.664Z","userId":""}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:53:52.868Z","userId":""}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:53:52.868Z","userId":""}
+[32minfo[39m: Booted in: 50ms. {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:53:52.868Z","userId":""}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:54:38.188Z","userId":""}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:54:38.188Z","userId":""}
+[32minfo[39m: Booted in: 50ms. {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:54:38.188Z","userId":""}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:55:56.128Z","userId":""}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:55:56.128Z","userId":""}
+[32minfo[39m: Booted in: 47ms. {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:55:56.128Z","userId":""}

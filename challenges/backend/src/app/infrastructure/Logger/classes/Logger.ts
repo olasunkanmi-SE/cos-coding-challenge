@@ -1,5 +1,5 @@
 import "reflect-metadata";
-import { ILogger } from "../interface/ILogger";
+import { ILogger, RequestMethod } from "../interface/ILogger";
 import { injectable } from "inversify";
 import { Logger } from "winston";
 import { BaseError } from "../../error/base-error";
@@ -38,16 +38,13 @@ export class ApplicationLogger implements ILogger {
       });
     }
 
-    return this._logger.error(
-      `{${error.code}} - {${error.name}} - {${error.description}}`,
-      {
-        exception: { ...exception },
-        ...contextData,
-        ...meta,
-        error: { ...error },
-        errorCode,
-      }
-    );
+    return this._logger.error(`{${error.code}} - {${error.name}} - {${error.description}}`, {
+      exception: { ...exception },
+      ...contextData,
+      ...meta,
+      error: { ...error },
+      errorCode,
+    });
   }
 
   private getErrorContextData(error?: BaseError): IContextData | undefined {
@@ -57,5 +54,16 @@ export class ApplicationLogger implements ILogger {
     const contextData: IContextData = this._currentContextManager.getContextData();
     contextData.errors.errors.push(error);
     return contextData;
+  }
+
+  trackRequest(params: RequestMethod): RequestMethod {
+    const { name, url, duration, resultCode, success } = params;
+    return {
+      name,
+      url,
+      duration,
+      resultCode,
+      success,
+    };
   }
 }

@@ -6,6 +6,7 @@ import { InversifyExpressServer } from "inversify-express-utils";
 import bodyParser from "body-parser";
 import { ILogger } from "./infrastructure/Logger/interface/ILogger";
 import { errorMiddleware } from "./infrastructure/middleware/error-middleware";
+import { loggerMiddleware } from "./infrastructure/middleware/logger-middleware";
 
 /**
  * Start Express server
@@ -21,6 +22,7 @@ export async function bootstrap(
   appPort: number,
   ...modules: ContainerModule[]
 ) {
+  const startTime = Date.now();
   if (container.isBound(DependencyIdentifier.App) === false) {
     container.load(...modules);
     const logger: ILogger = container.get<ILogger>(DependencyIdentifier.Logger);
@@ -36,6 +38,7 @@ export async function bootstrap(
         })
       );
       app.use(bodyParser.json());
+      app.use(loggerMiddleware);
     });
 
     server.setErrorConfig((app) => {
@@ -49,5 +52,6 @@ export async function bootstrap(
     } catch (error) {
       console.log(error);
     }
+    logger.info(`Booted in: ${Date.now() - startTime}ms.`);
   }
 }
