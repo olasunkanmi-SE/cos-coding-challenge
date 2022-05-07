@@ -5,6 +5,7 @@ import { DependencyIdentifier } from "./application/constants/DependencyIdentifi
 import { InversifyExpressServer } from "inversify-express-utils";
 import bodyParser from "body-parser";
 import { ILogger } from "./infrastructure/Logger/interface/ILogger";
+import { errorMiddleware } from "./infrastructure/middleware/error-middleware";
 
 /**
  * Start Express server
@@ -24,8 +25,10 @@ export async function bootstrap(
     container.load(...modules);
     const logger: ILogger = container.get<ILogger>(DependencyIdentifier.Logger);
     logger.info("Logger Initialised");
+
     let server = new InversifyExpressServer(container);
     logger.info("Initialising express server");
+
     server.setConfig((app) => {
       app.use(
         bodyParser.urlencoded({
@@ -34,6 +37,11 @@ export async function bootstrap(
       );
       app.use(bodyParser.json());
     });
+
+    server.setErrorConfig((app) => {
+      app.use(errorMiddleware);
+    });
+
     try {
       let serverInstance = server.build();
       serverInstance.listen(appPort);
