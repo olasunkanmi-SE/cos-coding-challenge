@@ -1,4 +1,3 @@
-import { injectable } from "inversify";
 import { Errors } from "../error/error";
 import { IContextManager, IContextData } from "./context-manager.interface";
 
@@ -7,7 +6,7 @@ import { IContextManager, IContextData } from "./context-manager.interface";
  * @export
  * @class Context
  */
-@injectable()
+
 export class Context implements IContextManager {
   private readonly _userId: string | undefined;
   private readonly _authToken: string | undefined;
