@@ -7,6 +7,7 @@ import bodyParser from "body-parser";
 import { ILogger } from "./infrastructure/Logger/interface/ILogger";
 import { errorMiddleware } from "./infrastructure/middleware/error-middleware";
 import { loggerMiddleware } from "./infrastructure/middleware/logger-middleware";
+import { contextMiddleWare } from "./infrastructure/middleware/context-middleware";
 
 /**
  * Start Express server
@@ -39,6 +40,7 @@ export async function bootstrap(
       );
       app.use(bodyParser.json());
       app.use(loggerMiddleware);
+      app.use(contextMiddleWare);
     });
 
     server.setErrorConfig((app) => {

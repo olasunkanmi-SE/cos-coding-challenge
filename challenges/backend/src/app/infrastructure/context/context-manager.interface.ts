@@ -1,9 +1,8 @@
 import { Errors } from "../error/error";
-import { IAuthToken } from "./security-token";
 
 export interface IContextData {
-  userId: string;
-  authToken?: IAuthToken;
+  userId?: string;
+  authToken?: string;
   requestTimeStamp: string;
   additionalData: { [index: string]: any } | undefined;
   errors: Errors;

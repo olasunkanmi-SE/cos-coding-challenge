@@ -113,3 +113,60 @@
 [32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:55:56.128Z","userId":""}
 [32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:55:56.128Z","userId":""}
 [32minfo[39m: Booted in: 47ms. {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:55:56.128Z","userId":""}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:59:14.964Z","userId":""}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:59:14.964Z","userId":""}
+[32minfo[39m: Booted in: 53ms. {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T00:59:14.964Z","userId":""}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:10:01.561Z"}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:10:01.561Z"}
+[32minfo[39m: Booted in: 57ms. {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:10:01.561Z"}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:10:29.313Z"}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:10:29.313Z"}
+[32minfo[39m: Booted in: 46ms. {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:10:29.313Z"}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:10:38.329Z"}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:10:38.329Z"}
+[32minfo[39m: Booted in: 45ms. {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:10:38.329Z"}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:12:24.781Z"}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:12:24.781Z"}
+[32minfo[39m: Booted in: 60ms. {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:12:24.781Z"}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:13:45.834Z"}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:13:45.834Z"}
+[32minfo[39m: Booted in: 58ms. {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:13:45.834Z"}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:16:30.696Z"}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:16:30.696Z"}
+[32minfo[39m: Booted in: 63ms. {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:16:30.696Z"}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:17:56.765Z"}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:17:56.765Z"}
+[32minfo[39m: Booted in: 61ms. {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:17:56.765Z"}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:19:25.578Z"}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:19:25.578Z"}
+[32minfo[39m: Booted in: 50ms. {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:19:25.578Z"}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:22:46.980Z"}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:22:46.980Z"}
+[32minfo[39m: Booted in: 65ms. {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:22:46.980Z"}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:23:07.538Z"}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:23:07.538Z"}
+[32minfo[39m: Booted in: 41ms. {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:23:07.538Z"}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:23:42.751Z"}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:23:42.751Z"}
+[32minfo[39m: Booted in: 49ms. {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:23:42.751Z"}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:24:19.587Z"}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:24:19.587Z"}
+[32minfo[39m: Booted in: 68ms. {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:24:19.587Z"}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:25:03.753Z"}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:25:03.753Z"}
+[32minfo[39m: Booted in: 45ms. {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:25:03.753Z"}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:25:33.115Z"}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:25:33.115Z"}
+[32minfo[39m: Booted in: 63ms. {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:25:33.115Z"}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:25:48.907Z"}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:25:48.907Z"}
+[32minfo[39m: Booted in: 56ms. {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:25:48.907Z"}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:25:54.129Z"}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:25:54.129Z"}
+[32minfo[39m: Booted in: 62ms. {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:25:54.129Z"}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:26:23.968Z"}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:26:23.968Z"}
+[32minfo[39m: Booted in: 83ms. {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:26:23.968Z"}
+[32minfo[39m: Logger Initialised {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:26:50.336Z"}
+[32minfo[39m: Initialising express server {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:26:50.336Z"}
+[32minfo[39m: Booted in: 57ms. {"errors":{"_errors":[]},"requestTimeStamp":"2022-05-07T02:26:50.336Z"}

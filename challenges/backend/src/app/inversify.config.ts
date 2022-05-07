@@ -11,7 +11,7 @@ import { EnvironmentConfigurationManager } from "./infrastructure/configuration/
 
 export const containerBidings = new ContainerModule((bind: interfaces.Bind) => {
   const winstonLogger = initLogger();
-  const contextManager = new Context("", new Date());
+  const contextManager = new Context(new Date());
   const environmentConfigurationManger = new EnvironmentConfigurationManager();
 
   bind<IEnvironmentConfigurationManager>(DependencyIdentifier.ConfigurationManager).toConstantValue(
