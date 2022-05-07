@@ -12,17 +12,17 @@ export class ApplicationLogger implements ILogger {
   private _logger: Logger;
   private _currentContextManager: IContextManager;
 
-  constructor(currentContextManager: IContextManager, logger: Logger) {
+  public constructor(currentContextManager: IContextManager, logger: Logger) {
     this._currentContextManager = currentContextManager;
     this._logger = logger;
   }
 
-  info(message: string, meta?: object): Logger {
+  public info(message: string, meta?: object): Logger {
     const contextData = this.getErrorContextData();
     return this._logger.info(message, { ...contextData, ...meta });
   }
 
-  error(error: BaseError, meta?: IErrorMetadata, errorCode?: number): Logger {
+  public error(error: BaseError, meta?: IErrorMetadata, errorCode?: number): Logger {
     const exception = meta?.exception;
     const contextData = this.getErrorContextData(error);
     if (typeof error === "string") {
@@ -56,7 +56,7 @@ export class ApplicationLogger implements ILogger {
     return contextData;
   }
 
-  trackRequest(params: RequestMethod): RequestMethod {
+  public trackRequest(params: RequestMethod): RequestMethod {
     const { name, url, duration, resultCode, success } = params;
     return {
       name,

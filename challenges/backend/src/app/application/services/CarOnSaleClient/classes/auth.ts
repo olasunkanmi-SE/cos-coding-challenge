@@ -8,11 +8,11 @@ import { APIResponseMessages } from "../../../constants/literals";
 export class Auth implements ICarOnSaleClient {
   private _baseUrl: string | undefined;
   private _authUrl: string | undefined;
-  constructor() {
+  public constructor() {
     this._baseUrl = process.env.BASE_URL;
     this._authUrl = process.env.AUTH_URL;
   }
-  async authenticateUser(data: { userId: string; password: string }): Promise<any> {
+ public async authenticateUser(data: { userId: string; password: string }): Promise<any> {
     try {
       const options: any = {
         method: "PUT",

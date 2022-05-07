@@ -6,12 +6,16 @@ import { ERROR_CATEGORY } from "./error-category";
  * @class BaseError
  */
 export class BaseError {
+  public static readonly UNKOWN_ERROR = new BaseError(1001, "Unknown error ", "We have encountered unknown error, please try again.", [
+    ERROR_CATEGORY.TechnicalInProcess,
+  ]);
+
   protected readonly _name: string;
   protected readonly _code: number;
   protected readonly _description: string;
   protected readonly _categories: ERROR_CATEGORY[];
 
-  constructor(code: number, name: string, description: string, categories: ERROR_CATEGORY[]) {
+  public constructor(code: number, name: string, description: string, categories: ERROR_CATEGORY[]) {
     this._name = name;
     this._code = code;
     this._categories = categories;
@@ -30,14 +34,7 @@ export class BaseError {
     return this._description;
   }
 
-  get categories(): Array<ERROR_CATEGORY> {
+  get categories(): ERROR_CATEGORY[] {
     return this._categories;
   }
-
-  static readonly UNKOWN_ERROR = new BaseError(
-    1001,
-    "Unknown error ",
-    "We have encountered unknown error, please try again.",
-    [ERROR_CATEGORY.TechnicalInProcess]
-  );
 }

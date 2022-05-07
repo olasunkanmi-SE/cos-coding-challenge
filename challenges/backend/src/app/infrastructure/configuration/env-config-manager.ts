@@ -8,7 +8,7 @@ export class EnvironmentConfigurationManager implements IEnvironmentConfiguratio
    * @returns {string}
    * @memberof EnvironmentConfigurationManager
    */
-  get(key: string, defaultValue?: string): string {
+  public get(key: string, defaultValue?: string): string {
     const configValue = process.env[key];
     return configValue || defaultValue || "";
   }

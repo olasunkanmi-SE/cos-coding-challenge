@@ -5,9 +5,7 @@ import { DependencyIdentifier } from "../constants/DependencyIdentifiers";
 
 @controller("/")
 export class HomeController {
-  constructor(
-    @inject(DependencyIdentifier.AuctionMonitorApp) private auctionMonitorApp: AuctionMonitorApp
-  ) {}
+  public constructor(@inject(DependencyIdentifier.AuctionMonitorApp) private auctionMonitorApp: AuctionMonitorApp) {}
   @httpGet("/")
   public get() {
     return this.auctionMonitorApp.start();

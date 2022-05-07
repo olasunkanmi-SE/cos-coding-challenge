@@ -1,7 +1,6 @@
 import "reflect-metadata";
 import { Container, ContainerModule } from "inversify";
 import { DependencyIdentifier } from "./application/constants/DependencyIdentifiers";
-// import { AuctionMonitorApp } from "./AuctionMonitorApp";
 import { InversifyExpressServer } from "inversify-express-utils";
 import bodyParser from "body-parser";
 import { ILogger } from "./infrastructure/Logger/interface/ILogger";
@@ -18,18 +17,14 @@ import { contextMiddleWare } from "./infrastructure/middleware/context-middlewar
  * @param {...ContainerModule[]} modules The container modules that needs to be loaded
  * @returns
  */
-export async function bootstrap(
-  container: Container,
-  appPort: number,
-  ...modules: ContainerModule[]
-) {
+export async function bootstrap(container: Container, appPort: number, ...modules: ContainerModule[]) {
   const startTime = Date.now();
   if (container.isBound(DependencyIdentifier.App) === false) {
     container.load(...modules);
     const logger: ILogger = container.get<ILogger>(DependencyIdentifier.Logger);
     logger.info("Logger Initialised");
 
-    let server = new InversifyExpressServer(container);
+    const server = new InversifyExpressServer(container);
     logger.info("Initialising express server");
 
     server.setConfig((app) => {
@@ -48,7 +43,7 @@ export async function bootstrap(
     });
 
     try {
-      let serverInstance = server.build();
+      const serverInstance = server.build();
       serverInstance.listen(appPort);
       console.log(`server is running on port ${appPort}`);
     } catch (error) {

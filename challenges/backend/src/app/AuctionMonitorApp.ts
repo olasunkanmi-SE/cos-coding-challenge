@@ -5,7 +5,7 @@ import { ILogger } from "./infrastructure/Logger/interface/ILogger";
 
 @injectable()
 export class AuctionMonitorApp {
-  constructor(@inject(DependencyIdentifier.Logger) private logger: ILogger) {}
+  public constructor(@inject(DependencyIdentifier.Logger) private logger: ILogger) {}
 
   public async start(): Promise<void> {
     this.logger.info(`Auction Monitor started.`);

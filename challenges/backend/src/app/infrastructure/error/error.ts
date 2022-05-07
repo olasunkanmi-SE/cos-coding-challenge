@@ -4,7 +4,7 @@ export class Errors {
   private readonly _instance?: string;
   private readonly _errors: BaseError[];
 
-  constructor(errors: BaseError[], instance?: string) {
+  public constructor(errors: BaseError[], instance?: string) {
     this._instance = instance;
     this._errors = errors;
   }

@@ -23,16 +23,10 @@ export class Context implements IContextManager {
    * @param {string} userId Email Address of the Current User
    * @param {string} requestContext Request Context (`HTTP POST api/user`)
    * @param {string} [authToken] `OPTIONAL PARAMETER` Authorization Token for the current request
-   * @param {{[index: string]: any}} additionalData Additional data to be mainatined i context in the form of object of key values pairs where key is of string type and value could be of any type
+   * @param {{[index: string]: any}} additionalData Additional data to be mainatined in context
    * @memberof Context
    */
-  constructor(
-    requestTimeStamp: Date,
-    userId?: string,
-    requestContext?: string,
-    authToken?: string,
-    additionalData?: { [index: string]: any }
-  ) {
+  public constructor(requestTimeStamp: Date, userId?: string, requestContext?: string, authToken?: string, additionalData?: { [index: string]: any }) {
     this._userId = userId;
     this._authToken = authToken;
     this._requestTimeStamp = requestTimeStamp?.toISOString();
@@ -65,7 +59,7 @@ export class Context implements IContextManager {
     return this._errors;
   }
 
-  getContextData(): IContextData {
+  public getContextData(): IContextData {
     return {
       userId: this.userId,
       authToken: this.authToken,

@@ -8,7 +8,7 @@ export const validateRequest = (
   errors: IError;
   isValid: boolean;
 } => {
-  let errors: any = {};
+  const errors: any = {};
   request.password = !isEmpty(request.password) ? request.password : "";
   request.userMailId = !isEmpty(request.userMailId) ? request.userMailId : "";
   if (!request.password.length) {

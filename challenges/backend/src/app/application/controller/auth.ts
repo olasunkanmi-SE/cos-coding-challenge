@@ -8,23 +8,20 @@ import { IUserAuthDTO } from "../auth/dtos/user-auth-dto";
 
 @controller("/auth")
 export class AuthController {
-  constructor(@inject(DependencyIdentifier.Auth) private auth: ICarOnSaleClient) {}
+  public constructor(@inject(DependencyIdentifier.Auth) private auth: ICarOnSaleClient) {}
   @httpPut("/")
-  public async validateUser(
-    @requestBody() reqBody: IUserAuthDTO,
-    @response() res: Response
-  ): Promise<any> {
+  public async validateUser(@requestBody() reqBody: IUserAuthDTO, @response() res: Response): Promise<any> {
     try {
       const data: { userId: string; password: string } = {
         userId: reqBody.userMailId,
         password: reqBody.password,
       };
-      let validAuthRequest = validateRequest(reqBody);
+      const validAuthRequest = validateRequest(reqBody);
       if (!validAuthRequest.isValid) {
         return res.status(400).json({ isSuccess: "false", error: validAuthRequest.errors });
       }
-      const response = await this.auth.authenticateUser(data);
-      return res.status(200).json(response);
+      const apiResponse = await this.auth.authenticateUser(data);
+      return res.status(200).json(apiResponse);
     } catch (error) {
       console.log(error);
     }

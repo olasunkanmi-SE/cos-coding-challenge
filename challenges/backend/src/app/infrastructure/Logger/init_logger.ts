@@ -10,13 +10,7 @@ export function initLogger(): winston.Logger {
         level: "debug",
       }),
     ],
-    format: format.combine(
-      format.colorize(),
-      format.splat(),
-      format.simple(),
-      format.align(),
-      format.timestamp()
-    ),
+    format: format.combine(format.colorize(), format.splat(), format.simple(), format.align(), format.timestamp()),
   });
   return logger;
 }

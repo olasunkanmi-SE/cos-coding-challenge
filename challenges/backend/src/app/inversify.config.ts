@@ -18,9 +18,7 @@ export const containerBidings = new ContainerModule((bind: interfaces.Bind) => {
   const contextManager = new Context(new Date());
   const environmentConfigurationManger = new EnvironmentConfigurationManager();
 
-  bind<IEnvironmentConfigurationManager>(DependencyIdentifier.ConfigurationManager).toConstantValue(
-    environmentConfigurationManger
-  );
+  bind<IEnvironmentConfigurationManager>(DependencyIdentifier.ConfigurationManager).toConstantValue(environmentConfigurationManger);
 
   bind<IContextManager>(DependencyIdentifier.CurrentContext)
     .toDynamicValue(() => {
@@ -35,9 +33,7 @@ export const containerBidings = new ContainerModule((bind: interfaces.Bind) => {
     })
     .inSingletonScope();
 
-  bind<AuctionMonitorApp>(DependencyIdentifier.AuctionMonitorApp)
-    .to(AuctionMonitorApp)
-    .inSingletonScope();
+  bind<AuctionMonitorApp>(DependencyIdentifier.AuctionMonitorApp).to(AuctionMonitorApp).inSingletonScope();
 
   bind<ICarOnSaleClient>(DependencyIdentifier.Auth).to(Auth).inSingletonScope();
   HomeController;
