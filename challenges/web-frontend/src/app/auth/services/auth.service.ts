@@ -15,7 +15,7 @@ import {
 } from 'src/app/shared/services/notification';
 import { environment } from 'src/environments/environment';
 import { IAuth } from '../interface/auth';
-import { IUserInfo } from '../interface/user';
+import { IUserInfo, IUserResponseDTO } from '../interface/user';
 
 @Injectable({
   providedIn: 'root',
@@ -31,7 +31,7 @@ export class AuthService {
     private notificationService: NotificationService
   ) {
     this.loggedInUserSubject = new BehaviorSubject<IUserInfo>(
-      JSON.parse(JSON.stringify(this.getLoggedInUserInfoFromLocalStorage))
+      JSON.parse(localStorage.getItem('loggedInUser') as string)
     );
     this.loggedInUser = this.loggedInUserSubject.asObservable();
   }
@@ -41,7 +41,7 @@ export class AuthService {
   }
 
   public authenticateuser(loginPayload: IAuth) {
-    const req = this.http.put(
+    const req = this.http.put<IUserResponseDTO>(
       `${environment.backendBaseAPI}${this.url}`,
       loginPayload
     );
@@ -52,6 +52,7 @@ export class AuthService {
         return error;
       });
     }
+
     req.pipe(takeUntil(this.destroy.asObservable())).subscribe(
       (res: any) => {
         if (Object.hasOwnProperty.call(res, 'authenticated')) {
@@ -82,10 +83,6 @@ export class AuthService {
 
   public logOut() {
     localStorage.removeItem('authenticated');
-  }
-
-  public getLoggedInUserInfoFromLocalStorage() {
-    localStorage.getItem('loggedInUser');
   }
 
   public ngOnDestroy() {

@@ -49,7 +49,7 @@ export class AuthComponent implements OnInit {
       userMailId: this.loginForm.value.email,
     };
     this.auth.authenticateuser(this.loginForm.value);
-    this.router.navigate(['/auth']);
+    this.router.navigate(['/auction']);
   }
 
   public loginUser() {
