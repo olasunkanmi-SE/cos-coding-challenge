@@ -1,10 +1,4 @@
-import { form } from '../constants/form-constants';
-import {
-  AbstractControl,
-  ValidationErrors,
-  ValidatorFn,
-  FormGroup,
-} from '@angular/forms';
+import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
 
 export class FormCustomValidation {
   static patternValidator(regex: RegExp, error: ValidationErrors): ValidatorFn {

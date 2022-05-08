@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { form } from '../constants/form-constants';
+import { Router } from '@angular/router';
+import { AppConstants } from '../constants/contants';
 import { FormCustomValidation } from '../utilities/form-custom-validation';
 import { AuthService } from './services/auth.service';
 
@@ -15,7 +16,8 @@ export class AuthComponent implements OnInit {
 
   public constructor(
     private formBuilder: FormBuilder,
-    private auth: AuthService
+    private auth: AuthService,
+    private router: Router
   ) {}
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -23,7 +25,7 @@ export class AuthComponent implements OnInit {
         '',
         [
           Validators.required,
-          FormCustomValidation.patternValidator(form.emailPattern, {
+          FormCustomValidation.patternValidator(AppConstants.emailPattern, {
             hasEmail: true,
           }),
         ],
@@ -33,19 +35,21 @@ export class AuthComponent implements OnInit {
   }
 
   get email() {
-    return this.loginForm.get(form.email);
+    return this.loginForm.get(AppConstants.email);
   }
 
   get password() {
-    return this.loginForm.get(form.password);
+    return this.loginForm.get(AppConstants.password);
   }
 
   private onLogin() {
     this.loginForm.value = {
+      email: this.loginForm.value.email,
       ...this.loginForm.value,
       userMailId: this.loginForm.value.email,
     };
     this.auth.authenticateuser(this.loginForm.value);
+    this.router.navigate(['/auth']);
   }
 
   public loginUser() {

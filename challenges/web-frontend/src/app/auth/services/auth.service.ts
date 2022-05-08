@@ -1,7 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { Subject, takeUntil, throwError } from 'rxjs';
+import {
+  BehaviorSubject,
+  Subject,
+  takeUntil,
+  throwError,
+  Observable,
+} from 'rxjs';
+import { AppConstants } from 'src/app/constants/contants';
 import {
   ErrorCode,
   NotificationService,
@@ -9,6 +15,7 @@ import {
 } from 'src/app/shared/services/notification';
 import { environment } from 'src/environments/environment';
 import { IAuth } from '../interface/auth';
+import { IUserInfo } from '../interface/user';
 
 @Injectable({
   providedIn: 'root',
@@ -16,28 +23,54 @@ import { IAuth } from '../interface/auth';
 export class AuthService {
   private destroy = new Subject<boolean>();
   private url = '/auth';
-  constructor(
-    private http: HttpClient,
-    private notificationService: NotificationService,
-    private snackBar: MatSnackBar
-  ) {}
+  private loggedInUserSubject: BehaviorSubject<IUserInfo>;
+  public loggedInUser: Observable<IUserInfo>;
 
-  authenticateuser(loginPayload: IAuth) {
+  public constructor(
+    private http: HttpClient,
+    private notificationService: NotificationService
+  ) {
+    this.loggedInUserSubject = new BehaviorSubject<IUserInfo>(
+      JSON.parse(JSON.stringify(this.getLoggedInUserInfoFromLocalStorage))
+    );
+    this.loggedInUser = this.loggedInUserSubject.asObservable();
+  }
+
+  public get loggedInUserValue(): IUserInfo {
+    return this.loggedInUserSubject.value;
+  }
+
+  public authenticateuser(loginPayload: IAuth) {
     const req = this.http.put(
       `${environment.backendBaseAPI}${this.url}`,
       loginPayload
     );
+
+    if (!req) {
+      throwError(() => {
+        const error: any = new Error(AppConstants.unSuccessfulConnection);
+        return error;
+      });
+    }
     req.pipe(takeUntil(this.destroy.asObservable())).subscribe(
       (res: any) => {
         if (Object.hasOwnProperty.call(res, 'authenticated')) {
+          localStorage.setItem(
+            'loggedInUser',
+            JSON.stringify({ userId: res.userId, token: res.token })
+          );
+          this.loggedInUserSubject.next({
+            userId: res.userId,
+            token: res.token,
+          });
           this.notificationService.userNotification(
             SuccessCode.HTTP_200_OK,
-            'Logged in Successfully'
+            AppConstants.successfulLogin
           );
         } else {
           this.notificationService.userNotification(
             ErrorCode.HTTP_400_BAD_REQUEST,
-            'Logged in Successfully'
+            AppConstants.unSuccessfulLogin
           );
         }
       },
@@ -47,8 +80,17 @@ export class AuthService {
     );
   }
 
-  ngOnDestroy() {
+  public logOut() {
+    localStorage.removeItem('authenticated');
+  }
+
+  public getLoggedInUserInfoFromLocalStorage() {
+    localStorage.getItem('loggedInUser');
+  }
+
+  public ngOnDestroy() {
     this.destroy.next(true);
     this.destroy.unsubscribe();
+    this.loggedInUserSubject.unsubscribe();
   }
 }
