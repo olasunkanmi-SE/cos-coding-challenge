@@ -1,0 +1,82 @@
+body {
+    background-color: #f1f1f1;
+}
+
+.form-group {
+    margin-bottom: 0.5rem !important;
+}
+
+.form-control {
+    font-weight: 450 !important;
+    font-size: 0.9rem !important;
+    color: rgba(var(--i1d, 38, 38, 38), 1) !important;
+    background-color: #fafafa !important;
+}
+
+
+.example-full-width {
+    width: 50%;
+    height: 100%;
+}
+
+
+.example-container .mat-form-field+.mat-form-field {
+    margin-left: 8px;
+}
+
+.example-right-align {
+    text-align: right;
+}
+
+
+input.example-right-align {
+    -moz-appearance: textfield;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: inherit;
+    width: 100%;
+    position: relative;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+mat-form-field {
+    margin-bottom: 15px;
+}
+
+.cnsale-h1 {
+    font-size: 28px;
+    line-height: 1.28572;
+    letter-spacing: 0;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    color: #161616;
+    font-weight: 300;
+}
+
+.mat-list-base {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    background-color: #673ab7;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.account-info {
+    color: #171717;
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 1.4;
+    letter-spacing: 0;
+    padding-left: 12px;
+    padding-bottom: 5px;
+}
+
+.example-card{
+    margin-top: 30%;
+}
+

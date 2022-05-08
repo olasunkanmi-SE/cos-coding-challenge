@@ -1,0 +1,12 @@
+@import "~@angular/material/theming";
+$custom-typography: mat-typography-config($font-family: '"sans-serif", Helvetica Neue',
+    );
+
+@include angular-material-typography($custom-typography);
+@import "~bootstrap/dist/css/bootstrap.css";
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
