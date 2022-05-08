@@ -1,13 +1,10 @@
-import { inject } from "inversify";
-import { controller, httpGet } from "inversify-express-utils";
-import { AuctionMonitorApp } from "../../AuctionMonitorApp";
-import { DependencyIdentifier } from "../constants/DependencyIdentifiers";
+import { Response } from "express";
+import { controller, httpGet, response } from "inversify-express-utils";
 
-@controller("/")
+@controller("/api")
 export class HomeController {
-  public constructor(@inject(DependencyIdentifier.AuctionMonitorApp) private auctionMonitorApp: AuctionMonitorApp) {}
   @httpGet("/")
-  public get() {
-    return this.auctionMonitorApp.start();
+  public get(@response() res: Response) {
+    return res.status(200).send({ hello: "Hi" });
   }
 }

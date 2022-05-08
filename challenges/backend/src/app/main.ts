@@ -7,6 +7,7 @@ import { ILogger } from "./infrastructure/Logger/interface/ILogger";
 import { errorMiddleware } from "./infrastructure/middleware/error-middleware";
 import { loggerMiddleware } from "./infrastructure/middleware/logger-middleware";
 import { contextMiddleWare } from "./infrastructure/middleware/context-middleware";
+import cors from "cors";
 
 /**
  * Start Express server
@@ -33,6 +34,7 @@ export async function bootstrap(container: Container, appPort: number, ...module
           extended: true,
         })
       );
+      app.use(cors());
       app.use(bodyParser.json());
       app.use(loggerMiddleware);
       app.use(contextMiddleWare);
