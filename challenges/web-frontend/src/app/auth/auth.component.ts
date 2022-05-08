@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { form } from '../constants/form-constants';
 import { FormCustomValidation } from '../utilities/form-custom-validation';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-auth',
@@ -12,7 +13,10 @@ export class AuthComponent implements OnInit {
   public loginForm: any;
   public hide: boolean = true;
 
-  constructor(private formBuilder: FormBuilder) {}
+  public constructor(
+    private formBuilder: FormBuilder,
+    private auth: AuthService
+  ) {}
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
       email: [
@@ -34,5 +38,17 @@ export class AuthComponent implements OnInit {
 
   get password() {
     return this.loginForm.get(form.password);
+  }
+
+  private onLogin() {
+    this.loginForm.value = {
+      ...this.loginForm.value,
+      userMailId: this.loginForm.value.email,
+    };
+    this.auth.authenticateuser(this.loginForm.value);
+  }
+
+  public loginUser() {
+    this.onLogin();
   }
 }

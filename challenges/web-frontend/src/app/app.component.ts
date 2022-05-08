@@ -1,4 +1,4 @@
-import { AuthService } from './services/auth.service';
+import { AuthService } from './auth/services/auth.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,7 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  constructor(private auth: AuthService) {
-    this.auth.authenticateuser();
-  }
+  constructor(private auth: AuthService) {}
 }

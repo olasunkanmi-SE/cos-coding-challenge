@@ -15,7 +15,7 @@
                         <mat-divider></mat-divider>
                     </mat-list>
                     <mat-card-content>
-                        <form class="example-form" [formGroup]="loginForm">
+                        <form class="example-form" [formGroup]="loginForm" (ngSubmit)="loginUser()">
                             <div>
                                 <mat-form-field class="example-full-width" appearance="fill">
                                     <mat-label>Email</mat-label>
@@ -47,7 +47,7 @@
                             <p>
                                 <button class="example-full-width" mat-raised-button color="primary" type="submit"
                                     [disabled]="loginForm.invalid">
-                                    Sign Up
+                                    Log In
                                 </button>
                             </p>
                         </form>

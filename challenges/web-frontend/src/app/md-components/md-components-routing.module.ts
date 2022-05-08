@@ -15,6 +15,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
   exports: [
+    MatSnackBarModule,
     MatListModule,
     MatButtonModule,
     MatIconModule,
@@ -26,7 +27,6 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatAutocompleteModule,
     MatProgressSpinnerModule,
     MatSelectModule,
-    MatSnackBarModule,
     MatProgressBarModule,
   ],
 })
