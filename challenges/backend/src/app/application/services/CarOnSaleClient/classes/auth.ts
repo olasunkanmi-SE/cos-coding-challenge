@@ -1,18 +1,17 @@
-import { ICarOnSaleClient } from "./../interface/ICarOnSaleClient";
-
 import { RestAPIService } from "./rest-api-service";
 import { injectable } from "inversify";
 import { APIResponseMessages } from "../../../constants/literals";
+import { IBuyerAuth } from "../interface/auth";
 
 @injectable()
-export class Auth implements ICarOnSaleClient {
+export class Auth implements IBuyerAuth {
   private _baseUrl: string | undefined;
   private _authUrl: string | undefined;
   public constructor() {
     this._baseUrl = process.env.BASE_URL;
     this._authUrl = process.env.AUTH_URL;
   }
- public async authenticateUser(data: { userId: string; password: string }): Promise<any> {
+  public async authenticateUser(data: { userId: string; password: string }): Promise<any> {
     try {
       const options: any = {
         method: "PUT",

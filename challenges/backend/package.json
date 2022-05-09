@@ -4,7 +4,7 @@
   "description": "CarOnSale Backend Coding Challenge",
   "main": "dist/index.js",
   "scripts": {
-    "start:run": "nodemon index.js",
+    "start:run": "nodemon -L index.js",
     "start:build": "tsc -w",
     "start": "concurrently npm:start:*",
     "test": "./node_modules/.bin/mocha --require ts-node/register ./src/**/*.spec.ts"

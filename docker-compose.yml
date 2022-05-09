@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  api:
+    build:
+      dockerfile: Dockerfile
+      context: ./challenges/backend
+    volumes:
+      - ./backend:/challenges/src/app
+      - /challenges/backend/src/app/node_modules
+    command: npm run start
+
+  frontend:
+    build:
+      dockerfile: Dockerfile
+      context: ./challenges/web-frontend
+    command: npm run start
+    volumes:
+      - ./web-frontend:/challenges/frontend/src/app
+      - /challenges/web-frontend/src/app/node_modules
+    ports:
+      - 4200:4200
+    links:
+      - backend

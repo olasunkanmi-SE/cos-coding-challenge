@@ -11,12 +11,20 @@ export const validateRequest = (
   const errors: any = {};
   request.password = !isEmpty(request.password) ? request.password : "";
   request.userMailId = !isEmpty(request.userMailId) ? request.userMailId : "";
-  if (!request.password.length) {
+  if (!request.password) {
     errors.password = validationError.passwordRequired;
   }
 
-  if (!request.userMailId.length) {
+  if (!request.password.length) {
+    errors.password = validationError.passwordEmpty;
+  }
+
+  if (!request.userMailId) {
     errors.userMailId = validationError.userIdRequired;
+  }
+
+  if (!request.userMailId.length) {
+    errors.userMailId = validationError.userIdEmpty;
   }
 
   return {

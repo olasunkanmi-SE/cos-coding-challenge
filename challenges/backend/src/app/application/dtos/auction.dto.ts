@@ -1,15 +1,8 @@
 export interface IActionResponseDTO {
   items: IAuctionItem[];
-  page: number;
-  total: number;
 }
 
-interface IAuctionItem
-  extends location,
-    auctionTimeStamp,
-    identifiers,
-    auctionBids,
-    vatAndTax {
+interface IAuctionItem extends location, auctionTimeStamp, identifiers, auctionBids, vatAndTax {
   id: number;
   label: string;
   endingTime: string;
