@@ -4,8 +4,6 @@ import { APIResponseMessages } from "../../../constants/literals";
 import { IBuyerAuth } from "../interface/auth";
 import { IAuthResponse } from "../../../dtos/auth.dto";
 import { AxiosResponse } from "axios";
-// import { createNamespace, Namespace } from "cls-hooked";
-
 @injectable()
 export class Auth implements IBuyerAuth {
   private _baseUrl: string | undefined;

@@ -6,7 +6,7 @@ export interface IUserAuthDTO {
 export interface IAuthResponse {
   token: string;
   authenticated: boolean;
-  userIs: string;
+  userId: string;
   internalUserId: number;
   internalUserUUId: string;
   type: number;

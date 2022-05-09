@@ -8,6 +8,15 @@ import { errorMiddleware } from "./infrastructure/middleware/error-middleware";
 import { loggerMiddleware } from "./infrastructure/middleware/logger-middleware";
 import { contextMiddleWare } from "./infrastructure/middleware/context-middleware";
 import cors from "cors";
+import session from "express-session";
+import cookieParser from "cookie-parser";
+
+declare module "express-session" {
+  export interface SessionData {
+    authtoken: string;
+    userId: string;
+  }
+}
 
 /**
  * Start Express server
@@ -38,6 +47,15 @@ export async function bootstrap(container: Container, appPort: number, ...module
       app.use(bodyParser.json());
       app.use(loggerMiddleware);
       app.use(contextMiddleWare);
+      app.use(
+        session({
+          secret: process.env.SECRET || "",
+          saveUninitialized: true,
+          cookie: { maxAge: 1000 * 60 * 60 },
+          resave: false,
+        })
+      );
+      app.use(cookieParser());
     });
 
     server.setErrorConfig((app) => {
