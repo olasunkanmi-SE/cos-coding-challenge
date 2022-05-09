@@ -1,12 +1,4 @@
-export interface IAuth {
-  token: string;
-  authenticated: boolean;
-  userIs: string;
-  internalUserId: number;
-  internalUserUUId: string;
-  type: number;
-  privileges: string;
-}
+import { IAuthResponse } from "../../../dtos/auth.dto";
 
 export interface IAuthError {
   msgKey: string;
@@ -22,5 +14,5 @@ export interface IRestAPIResponse<T> {
 }
 
 export interface IBuyerAuth {
-  authenticateUser(data: { userId: string; password: string }): any;
+  authenticateUser(data: { userId: string; password: string }): Promise<IAuthResponse | undefined>;
 }

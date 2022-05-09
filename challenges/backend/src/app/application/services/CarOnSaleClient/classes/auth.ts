@@ -2,6 +2,9 @@ import { RestAPIService } from "./rest-api-service";
 import { injectable } from "inversify";
 import { APIResponseMessages } from "../../../constants/literals";
 import { IBuyerAuth } from "../interface/auth";
+import { IAuthResponse } from "../../../dtos/auth.dto";
+import { AxiosResponse } from "axios";
+// import { createNamespace, Namespace } from "cls-hooked";
 
 @injectable()
 export class Auth implements IBuyerAuth {
@@ -11,7 +14,7 @@ export class Auth implements IBuyerAuth {
     this._baseUrl = process.env.BASE_URL;
     this._authUrl = process.env.AUTH_URL;
   }
-  public async authenticateUser(data: { userId: string; password: string }): Promise<any> {
+  public async authenticateUser(data: { userId: string; password: string }): Promise<IAuthResponse | undefined> {
     try {
       const options: any = {
         method: "PUT",
@@ -30,11 +33,10 @@ export class Auth implements IBuyerAuth {
       const userId: string = options.data.userId;
       const url: string = `${this._baseUrl}${this._authUrl}${userId}`;
       options.url = url;
-      const auth = await RestAPIService.callAPI(options);
-      console.log(auth.data);
+      const auth: AxiosResponse<IAuthResponse, any> = await RestAPIService.callAPI(options);
       return auth.data;
     } catch (error: any) {
-      console.log(error);
+      throw new Error(error);
     }
   }
 }
