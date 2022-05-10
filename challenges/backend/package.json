@@ -48,6 +48,7 @@
     "@types/chai": "^4.2.4",
     "@types/chai-spies": "^1.0.1",
     "chai": "^4.2.0",
-    "chai-spies": "^1.0.0"
+    "chai-spies": "^1.0.0",
+    "@types/mocha": "^5.2.7"
   }
 }

@@ -12,7 +12,7 @@ export class Auth implements IBuyerAuth {
     this._baseUrl = process.env.BASE_URL;
     this._authUrl = process.env.AUTH_URL;
   }
-  public async authenticateUser(data: { userId: string; password: string }): Promise<IAuthResponse | undefined> {
+  public async authenticateUser(data: { userId: string; password: string }): Promise<AxiosResponse<IAuthResponse, any>> {
     try {
       const options: any = {
         method: "PUT",
@@ -32,7 +32,7 @@ export class Auth implements IBuyerAuth {
       const url: string = `${this._baseUrl}${this._authUrl}${userId}`;
       options.url = url;
       const auth: AxiosResponse<IAuthResponse, any> = await RestAPIService.callAPI(options);
-      return auth.data;
+      return auth;
     } catch (error: any) {
       throw new Error(error);
     }

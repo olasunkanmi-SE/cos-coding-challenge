@@ -1,4 +1,4 @@
-export interface IActionResponseDTO {
+export interface IAuctionResponseDTO {
   items: IAuctionItem[];
 }
 

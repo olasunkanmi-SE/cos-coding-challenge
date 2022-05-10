@@ -6,6 +6,7 @@ import { controller, requestBody, httpPut, response } from "inversify-express-ut
 import { DependencyIdentifier } from "../constants/DependencyIdentifiers";
 import { IUserAuthDTO } from "../dtos/auth.dto";
 import { IBuyerAuth } from "../services/CarOnSaleClient/interface/auth";
+import { AxiosResponse } from "axios";
 
 @controller("/api/auth")
 export class AuthController {
@@ -21,7 +22,7 @@ export class AuthController {
       if (!isValid) {
         return res.status(400).json(errors);
       }
-      const apiResponse: IAuthResponse | undefined = await this.auth.authenticateUser(data);
+      const apiResponse: AxiosResponse<IAuthResponse, any> = await this.auth.authenticateUser(data);
       return res.status(200).json(apiResponse);
     } catch (error) {
       console.log(error);

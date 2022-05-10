@@ -8,11 +8,13 @@ import { ApplicationLogger } from "./infrastructure/Logger/classes/Logger";
 import { IContextManager } from "./infrastructure/context/context-manager.interface";
 import { ILogger } from "./infrastructure/Logger/interface/ILogger";
 import { EnvironmentConfigurationManager } from "./infrastructure/configuration/env-config-manager";
-import { AuctionMonitorApp } from "./AuctionMonitorApp";
+import { AuctionMonitorApp } from "./auctionMonitorApp";
 import { Auth } from "./application/services/CarOnSaleClient/classes/auth";
 import { AuthController } from "./application/controller/auth";
 import { IBuyerAuth } from "./application/services/CarOnSaleClient/interface/auth";
 import { ICarOnSaleClient } from "./application/services/CarOnSaleClient/interface/ICarOnSaleClient";
+import { EnvironmentVariable } from "./application/services/CarOnSaleClient/classes/environment_variable";
+import { IEnvironmental } from "./application/services/CarOnSaleClient/interface/environmentalVariables";
 
 export const containerBidings = new ContainerModule((bind: interfaces.Bind) => {
   const winstonLogger = initLogger();
@@ -37,6 +39,8 @@ export const containerBidings = new ContainerModule((bind: interfaces.Bind) => {
   bind<ICarOnSaleClient>(DependencyIdentifier.AuctionMonitorApp).to(AuctionMonitorApp).inSingletonScope();
 
   bind<IBuyerAuth>(DependencyIdentifier.Auth).to(Auth).inSingletonScope();
+
+  bind<IEnvironmental>(DependencyIdentifier.EnvironmentVariable).to(EnvironmentVariable).inSingletonScope();
   AuctionController;
   AuthController;
 });

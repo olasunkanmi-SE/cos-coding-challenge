@@ -1,10 +1,10 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 
 export class RestAPIService {
- public static async callAPI<T>(options: Partial<AxiosRequestConfig>): Promise<AxiosResponse<T>> {
+  public static async callAPI(options: Partial<AxiosRequestConfig>): Promise<any> {
     try {
       const response: AxiosResponse = await axios(options);
-      return response;
+      return response.data;
     } catch (error: any) {
       return error.response;
     }

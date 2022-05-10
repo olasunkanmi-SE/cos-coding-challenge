@@ -6,4 +6,5 @@ export const DependencyIdentifier = {
   AuctionMonitorApp: Symbol("AuctionMonitorApp"),
   Auth: Symbol("Auth"),
   ValidationMiddleWare: Symbol("validationMiddleWare"),
+  EnvironmentVariable: Symbol("EnvironmentVariable"),
 };

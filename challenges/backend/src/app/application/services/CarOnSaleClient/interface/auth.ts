@@ -1,3 +1,4 @@
+import { AxiosResponse } from "axios";
 import { IAuthResponse } from "../../../dtos/auth.dto";
 
 export interface IAuthError {
@@ -14,5 +15,5 @@ export interface IRestAPIResponse<T> {
 }
 
 export interface IBuyerAuth {
-  authenticateUser(data: { userId: string; password: string }): Promise<IAuthResponse | undefined>;
+  authenticateUser(data: { userId: string; password: string }): Promise<AxiosResponse<IAuthResponse, any>>;
 }
