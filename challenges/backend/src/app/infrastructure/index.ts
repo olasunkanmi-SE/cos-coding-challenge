@@ -5,3 +5,5 @@ export * from "./error";
 export * from "./exceptions";
 export * from "./ioc";
 export * from "./middleware";
+export * from "./Logger";
+export * from "./cache";

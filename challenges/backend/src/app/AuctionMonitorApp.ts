@@ -31,8 +31,8 @@ export class AuctionMonitorApp implements ICarOnSaleClient {
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json;charset=UTF-8",
-          authtoken: userInfoCache.get(applicationConstants.authtoken),
-          userid: userInfoCache.get(applicationConstants.userId),
+          authtoken: userInfoCache.get(applicationConstants.authtoken) ? userInfoCache.get(applicationConstants.authtoken) : "",
+          userid: userInfoCache.get(applicationConstants.userId) ? userInfoCache.get(applicationConstants.userId) : "",
         },
       };
       if (!this._baseUrl) {
@@ -41,7 +41,6 @@ export class AuctionMonitorApp implements ICarOnSaleClient {
       if (!this._buyerUrl) {
         throw new Error(APIResponseMessages.ERROR_GETTING_BASE_URL);
       }
-      //   const userId: string = options.data.userId;
       const url: string = `${this._baseUrl}${this._buyerUrl}`;
       options.url = url;
       const auth: AxiosResponse<IActionResponseDTO, any> = await RestAPIService.callAPI(options);
