@@ -4,7 +4,7 @@ import { FormBuilder } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
 import { MdComponentsModule } from '../md-components/md-components-routing.module';
-
+import { NotificationService } from '../shared/services/notification';
 import { AuthComponent } from './auth.component';
 import { AuthService } from './services/auth.service';
 
@@ -21,7 +21,7 @@ describe('AuthComponent', () => {
         MdComponentsModule,
       ],
       declarations: [AuthComponent],
-      providers: [FormBuilder, AuthService],
+      providers: [FormBuilder, AuthService, NotificationService],
     }).compileComponents();
   });
 
