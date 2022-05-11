@@ -8,4 +8,5 @@ export const AppConstants = {
   numberPattern: /\d/,
   unSuccessfulConnection: 'could not connect to the API',
   noHeaders: 'could not retrieve user information',
+  loggedIn: 'You are logged in already',
 };

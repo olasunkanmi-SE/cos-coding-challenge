@@ -1,3 +1,4 @@
+import { NotificationService } from './../shared/services/notification';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -17,8 +18,14 @@ export class AuthComponent implements OnInit {
   public constructor(
     private formBuilder: FormBuilder,
     private auth: AuthService,
-    private router: Router
-  ) {}
+    private router: Router,
+    private notificationService: NotificationService
+  ) {
+    if (this.auth.loggedInUserValue) {
+      this.notificationService.openSnackBar(AppConstants.loggedIn, null);
+      this.router.navigate(['/auction']);
+    }
+  }
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
       email: [
