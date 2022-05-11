@@ -43,6 +43,7 @@ export class AuthComponent implements OnInit {
   }
 
   private onLogin() {
+    localStorage.removeItem('loggedInUser');
     this.loginForm.value = {
       email: this.loginForm.value.email,
       ...this.loginForm.value,

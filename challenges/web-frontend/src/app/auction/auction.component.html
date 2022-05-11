@@ -1,1 +1,24 @@
-<p>auction works!</p>
+<section>
+    <div class="container">
+        <div class="row" style="margin:auto; margin-top: 10%;">
+           <mat-progress-bar mode="indeterminate" *ngIf="isLoading"></mat-progress-bar> 
+        </div>  
+        <div class="row" *ngIf="!isLoading">
+            <div class="col-md-4 col-mb-3"></div>
+            <div class="col-md-4 col-mb-3"><h1>Auction Count: {{auctions.length}}</h1></div>
+            <div class="col-md-4 col-mb-3"></div>
+            <div class="col-md-6 col-mb-3 cardspace" *ngFor="let auction of auctions">
+            <mat-card class="example-card">
+                <mat-card-title>{{auction.label}}</mat-card-title>
+                <mat-card-content>
+                    <p>Average Bids: {{auction.numBids}}</p>
+                    <p></p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <h3>Auction Progress: {{((auction.currentHighestBidValue && auction.minimumRequiredAsk ? auction.currentHighestBidValue/auction.minimumRequiredAsk : 0) * 100).toFixed(2)}}</h3>
+                </mat-card-actions>
+            </mat-card>
+            </div>
+        </div>
+    </div>
+</section>

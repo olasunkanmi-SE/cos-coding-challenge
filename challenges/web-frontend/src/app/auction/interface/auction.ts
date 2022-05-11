@@ -1,10 +1,10 @@
-export interface IActionResponseDTO {
+export interface IAuctionResponseDTO {
   items: IAuctionItem[];
   page: number;
   total: number;
 }
 
-interface IAuctionItem
+export interface IAuctionItem
   extends location,
     auctionTimeStamp,
     identifiers,

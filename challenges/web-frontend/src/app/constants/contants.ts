@@ -6,6 +6,6 @@ export const AppConstants = {
   emailPattern:
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
   numberPattern: /\d/,
-  unSuccessfulConnection: 'cound not connect to the API',
+  unSuccessfulConnection: 'could not connect to the API',
   noHeaders: 'could not retrieve user information',
 };
