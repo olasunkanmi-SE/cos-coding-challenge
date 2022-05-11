@@ -1,4 +1,8 @@
+import { MdComponentsModule } from './../md-components/md-components-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { AuctionComponent } from './auction.component';
 
@@ -8,9 +12,14 @@ describe('AuctionComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AuctionComponent ]
-    })
-    .compileComponents();
+      imports: [
+        BrowserAnimationsModule,
+        RouterTestingModule,
+        HttpClientModule,
+        MdComponentsModule,
+      ],
+      declarations: [AuctionComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

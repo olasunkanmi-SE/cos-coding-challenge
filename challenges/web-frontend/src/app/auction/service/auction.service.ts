@@ -3,8 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject, takeUntil, throwError } from 'rxjs';
 import { AuthService } from 'src/app/auth/services/auth.service';
-import { Router } from '@angular/router';
-import { IAuctionResponseDTO, IAuctionItem } from '../interface/auction';
+import { IAuctionResponseDTO } from '../interface/auction';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -18,7 +17,6 @@ export class AuctionService {
 
   public constructor(
     private authService: AuthService,
-    private router: Router,
     private http: HttpClient
   ) {
     let loggedInUser = this.authService.loggedInUserValue;
