@@ -9,4 +9,5 @@ export const AppConstants = {
   unSuccessfulConnection: 'could not connect to the API',
   noHeaders: 'could not retrieve user information',
   loggedIn: 'You are logged in already',
+  inValidLogin: 'Invalid Username or Password',
 };

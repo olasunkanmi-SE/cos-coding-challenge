@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdComponentsModule } from './md-components/md-components-routing.module';
+import { ErrorInterceptor } from './helpers/error-interceptor';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,7 +16,9 @@ import { MdComponentsModule } from './md-components/md-components-routing.module
     BrowserAnimationsModule,
     MdComponentsModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

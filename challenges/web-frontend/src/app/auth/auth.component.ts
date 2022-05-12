@@ -1,7 +1,7 @@
+import { Router } from '@angular/router';
 import { NotificationService } from './../shared/services/notification';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { AppConstants } from '../constants/contants';
 import { FormCustomValidation } from '../utilities/form-custom-validation';
 import { AuthService } from './services/auth.service';
@@ -49,15 +49,14 @@ export class AuthComponent implements OnInit {
     return this.loginForm.get(AppConstants.password);
   }
 
-  private onLogin() {
+  private async onLogin() {
     localStorage.removeItem('loggedInUser');
     this.loginForm.value = {
       email: this.loginForm.value.email,
       ...this.loginForm.value,
       userMailId: this.loginForm.value.email,
     };
-    this.auth.authenticateuser(this.loginForm.value);
-    this.router.navigate(['/auction']);
+    await this.auth.authenticateuser(this.loginForm.value);
   }
 
   public loginUser() {

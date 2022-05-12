@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import {
   BehaviorSubject,
   Subject,
@@ -28,7 +29,8 @@ export class AuthService {
 
   public constructor(
     private http: HttpClient,
-    private notificationService: NotificationService
+    private notificationService: NotificationService,
+    private router: Router
   ) {
     this.loggedInUserSubject = new BehaviorSubject<IUserInfo>(
       JSON.parse(localStorage.getItem('loggedInUser') as string)
@@ -40,7 +42,7 @@ export class AuthService {
     return this.loggedInUserSubject.value;
   }
 
-  public authenticateuser(loginPayload: IAuth) {
+  public async authenticateuser(loginPayload: IAuth) {
     const req = this.http.put<IUserResponseDTO>(
       `${environment.backendBaseAPI}${this.url}`,
       loginPayload
@@ -68,6 +70,7 @@ export class AuthService {
             SuccessCode.HTTP_200_OK,
             AppConstants.successfulLogin
           );
+          this.router.navigate(['/auction']);
         } else {
           this.notificationService.userNotification(
             ErrorCode.HTTP_400_BAD_REQUEST,
