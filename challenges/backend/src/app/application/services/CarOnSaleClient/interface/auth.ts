@@ -1,3 +1,4 @@
+import { IContextData } from "./../../../../infrastructure/context/context-manager.interface";
 import { AxiosResponse } from "axios";
 import { IAuthResponse } from "../../../dtos/auth.dto";
 
@@ -15,5 +16,5 @@ export interface IRestAPIResponse<T> {
 }
 
 export interface IBuyerAuth {
-  authenticateUser(data: { userId: string; password: string }): Promise<AxiosResponse<IAuthResponse, any>>;
+  authenticateUser(data: { userId: string; password: string }, context: IContextData): Promise<AxiosResponse<IAuthResponse, any>>;
 }

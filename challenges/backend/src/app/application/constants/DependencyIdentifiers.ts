@@ -7,4 +7,5 @@ export const DependencyIdentifier = {
   Auth: Symbol("Auth"),
   ValidationMiddleWare: Symbol("validationMiddleWare"),
   EnvironmentVariable: Symbol("EnvironmentVariable"),
+  RestAPIService: Symbol("RestAPIService"),
 };

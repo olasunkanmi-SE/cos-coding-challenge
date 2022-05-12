@@ -5,4 +5,5 @@ import { IAuctionResponseDTO } from "../../../dtos/auction.dto";
  */
 export interface ICarOnSaleClient {
   getRunningAuctions(): Promise<AxiosResponse<IAuctionResponseDTO, any>>;
+  start(): Promise<void>;
 }

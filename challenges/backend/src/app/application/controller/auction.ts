@@ -5,14 +5,19 @@ import { inject } from "inversify";
 import { BaseHttpController, controller, httpGet, response } from "inversify-express-utils";
 import { DependencyIdentifier } from "../constants/DependencyIdentifiers";
 import { userInfoCache } from "../../infrastructure/cache/cache";
+import { ILogger } from "../../infrastructure";
+import { ApplicationError } from "../../infrastructure/error/application-error";
 
 @controller("/api/auction")
 export class AuctionController extends BaseHttpController {
-  public constructor(@inject(DependencyIdentifier.AuctionMonitorApp) private auctionMonitor: ICarOnSaleClient) {
+  public constructor(
+    @inject(DependencyIdentifier.AuctionMonitorApp) private auctionMonitor: ICarOnSaleClient,
+    @inject(DependencyIdentifier.Logger) private logger: ILogger
+  ) {
     super();
   }
   @httpGet("/")
-  public async getRunningAuction(@response() res: Response): Promise<any> {
+  public async getRunningAuction(@response() res: Response): Promise<Response<any, Record<string, any>>> {
     try {
       const userId = this.httpContext.request.headers["userid"];
       const authtoken = this.httpContext.request.headers["authtoken"];
@@ -28,6 +33,9 @@ export class AuctionController extends BaseHttpController {
       }
       const apiResponse = await this.auctionMonitor.getRunningAuctions();
       return res.status(200).send(apiResponse);
-    } catch (error) {}
+    } catch (exception) {
+      this.logger.error(ApplicationError.error(ApplicationError.API_ERROR, "Exception while retrieving Auctions", `Exception while retrieving Auctions`));
+      throw exception;
+    }
   }
 }

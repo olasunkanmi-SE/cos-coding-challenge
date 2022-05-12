@@ -8,6 +8,7 @@ import { errorMiddleware } from "./infrastructure/middleware/error-middleware";
 import { loggerMiddleware } from "./infrastructure/middleware/logger-middleware";
 import { contextMiddleWare } from "./infrastructure/middleware/context-middleware";
 import cors from "cors";
+import { ApplicationError } from "./infrastructure/error/application-error";
 
 declare module "express-session" {
   export interface SessionData {
@@ -56,7 +57,8 @@ export async function bootstrap(container: Container, appPort: number, ...module
       serverInstance.listen(appPort);
       console.log(`server is running on port ${appPort}`);
     } catch (error) {
-      console.log(error);
+      ApplicationError.EXPRESS_SERVER_RUN_ERROR;
+      throw error;
     }
     logger.info(`Booted in: ${Date.now() - startTime}ms.`);
   }

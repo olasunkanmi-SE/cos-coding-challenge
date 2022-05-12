@@ -1,3 +1,4 @@
+import { IRestAPI } from "./application/services/CarOnSaleClient/interface/rest-api";
 import { IEnvironmentConfigurationManager } from "./infrastructure/configuration/env-config-manager.interface";
 import { DependencyIdentifier } from "./application/constants/DependencyIdentifiers";
 import { AuctionController } from "./application/controller/auction";
@@ -13,8 +14,7 @@ import { Auth } from "./application/services/CarOnSaleClient/classes/auth";
 import { AuthController } from "./application/controller/auth";
 import { IBuyerAuth } from "./application/services/CarOnSaleClient/interface/auth";
 import { ICarOnSaleClient } from "./application/services/CarOnSaleClient/interface/ICarOnSaleClient";
-import { EnvironmentVariable } from "./application/services/CarOnSaleClient/classes/environment_variable";
-import { IEnvironmental } from "./application/services/CarOnSaleClient/interface/environmentalVariables";
+import { RestAPIService } from "./application/services/CarOnSaleClient";
 
 export const containerBidings = new ContainerModule((bind: interfaces.Bind) => {
   const winstonLogger = initLogger();
@@ -40,7 +40,7 @@ export const containerBidings = new ContainerModule((bind: interfaces.Bind) => {
 
   bind<IBuyerAuth>(DependencyIdentifier.Auth).to(Auth).inSingletonScope();
 
-  bind<IEnvironmental>(DependencyIdentifier.EnvironmentVariable).to(EnvironmentVariable).inSingletonScope();
+  bind<IRestAPI>(DependencyIdentifier.RestAPIService).to(RestAPIService).inSingletonScope();
   AuctionController;
   AuthController;
 });

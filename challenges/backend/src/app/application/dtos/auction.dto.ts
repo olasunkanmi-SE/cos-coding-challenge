@@ -1,5 +1,7 @@
 export interface IAuctionResponseDTO {
   items: IAuctionItem[];
+  page: number;
+  total: number;
 }
 
 interface IAuctionItem extends location, auctionTimeStamp, identifiers, auctionBids, vatAndTax {
