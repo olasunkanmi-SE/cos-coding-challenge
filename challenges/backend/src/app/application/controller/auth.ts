@@ -9,7 +9,6 @@ import { controller, requestBody, httpPut, response, request } from "inversify-e
 import { DependencyIdentifier } from "../constants/DependencyIdentifiers";
 import { IUserAuthDTO } from "../dtos/auth.dto";
 import { IBuyerAuth } from "../services/CarOnSaleClient/interface/auth";
-import { AxiosResponse } from "axios";
 
 @controller("/api/auth")
 export class AuthController {
@@ -30,7 +29,7 @@ export class AuthController {
         return res.status(400).json(errors);
       }
       const contextManager = new Context(new Date(), data.userId, req.path);
-      const apiResponse: AxiosResponse<IAuthResponse, any> = await this.auth.authenticateUser(data, contextManager.getContextData());
+      const apiResponse: IAuthResponse = await this.auth.authenticateUser(data, contextManager.getContextData());
       return res.status(200).json(apiResponse);
     } catch (exception) {
       this.logger.error(

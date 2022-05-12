@@ -1,9 +1,8 @@
-import { RestAPIService } from "./rest-api-service";
+import { IRestAPI } from "./../interface/rest-api";
 import { inject, injectable } from "inversify";
 import { APIResponseMessages } from "../../../constants/literals";
 import { IBuyerAuth } from "../interface/auth";
 import { IAuthResponse } from "../../../dtos/auth.dto";
-import { AxiosResponse } from "axios";
 import { DependencyIdentifier } from "../../../constants";
 import { IEnvironmentConfigurationManager, ILogger } from "../../../../infrastructure";
 import { ApplicationError } from "../../../../infrastructure/error/application-error";
@@ -11,10 +10,10 @@ import { ApplicationError } from "../../../../infrastructure/error/application-e
 export class Auth implements IBuyerAuth {
   public constructor(
     @inject(DependencyIdentifier.ConfigurationManager) private configurationManager: IEnvironmentConfigurationManager,
-    @inject(DependencyIdentifier.RestAPIService) private restAPIService: RestAPIService,
+    @inject(DependencyIdentifier.RestAPIService) private restAPIService: IRestAPI,
     @inject(DependencyIdentifier.Logger) private logger: ILogger
   ) {}
-  public async authenticateUser(data: { userId: string; password: string }): Promise<AxiosResponse<IAuthResponse, any>> {
+  public async authenticateUser(data: { userId: string; password: string }): Promise<IAuthResponse> {
     try {
       const options: any = {
         method: "PUT",
@@ -35,7 +34,7 @@ export class Auth implements IBuyerAuth {
       const userId: string = options.data.userId;
       const url: string = `${baseUrl}${authUrl}${userId}`;
       options.url = url;
-      const auth: AxiosResponse<IAuthResponse, any> = await this.restAPIService.callAPI(options);
+      const auth: IAuthResponse = await this.restAPIService.callAPI(options);
       return auth;
     } catch (error: any) {
       this.logger.error(ApplicationError.error(error.response.status, error.response.statusText, `error.message -> ${data}`));

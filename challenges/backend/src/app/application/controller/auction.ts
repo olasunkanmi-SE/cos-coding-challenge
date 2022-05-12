@@ -7,6 +7,7 @@ import { DependencyIdentifier } from "../constants/DependencyIdentifiers";
 import { userInfoCache } from "../../infrastructure/cache/cache";
 import { ILogger } from "../../infrastructure";
 import { ApplicationError } from "../../infrastructure/error/application-error";
+import { IAuctionResponseDTO } from "../dtos";
 
 @controller("/api/auction")
 export class AuctionController extends BaseHttpController {
@@ -31,7 +32,7 @@ export class AuctionController extends BaseHttpController {
       if (!authtoken) {
         return res.status(400).send({ error: "provide a authtoken in the header of the request" });
       }
-      const apiResponse = await this.auctionMonitor.getRunningAuctions();
+      const apiResponse: IAuctionResponseDTO = await this.auctionMonitor.getRunningAuctions();
       return res.status(200).send(apiResponse);
     } catch (exception) {
       this.logger.error(ApplicationError.error(ApplicationError.API_ERROR, "Exception while retrieving Auctions", `Exception while retrieving Auctions`));

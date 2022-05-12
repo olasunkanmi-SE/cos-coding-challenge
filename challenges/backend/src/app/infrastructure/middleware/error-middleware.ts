@@ -11,7 +11,7 @@ export function errorMiddleware(error: HttpException, request: Request, response
   }
   return response.status(status || axiosStatusResponse).json({
     message,
-    status,
+    status: status || axiosStatusResponse,
   });
   next();
 }
