@@ -36,11 +36,11 @@ describe("user authentication", async () => {
   };
 
   it("should return user auth data", async () => {
-    //@ts-ignore
+    // @ts-ignore
     configManagerStub.get = (key: string) => {
       return "/";
     };
-    //@ts-ignore
+    // @ts-ignore
     restAPISserviceStub.callAPI = async (options: Partial<AxiosRequestConfig>): Promise<any> => {
       return mockData;
     };

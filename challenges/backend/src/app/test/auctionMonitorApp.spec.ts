@@ -12,7 +12,7 @@ describe("auction monitor app", () => {
   const configManagerStub: IEnvironmentConfigurationManager = sinon.stubInterface<IEnvironmentConfigurationManager>();
   const restAPIServiceStub: IRestAPI = sinon.stubInterface<IRestAPI>();
   const auctionMonitorStub = new AuctionMonitorApp(loggerStub, configManagerStub, restAPIServiceStub);
-  //@ts-ignore
+  // @ts-ignore
   configManagerStub.get = (key: string) => {
     return "/";
   };
@@ -27,7 +27,7 @@ describe("auction monitor app", () => {
   };
 
   it("should return running Auctions", async () => {
-    //@ts-ignore
+    // @ts-ignore
     restAPIServiceStub.callAPI = async (options: Partial<AxiosRequestConfig>): Promise<any> => {
       return auctionMockData;
     };

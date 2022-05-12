@@ -4,7 +4,7 @@ export interface IAuctionResponseDTO {
   total: number;
 }
 
-interface IAuctionItem extends location, auctionTimeStamp, identifiers, auctionBids, vatAndTax {
+interface IAuctionItem extends ILocation, IAuctionTimeStamp, IIdentifiers, IAuctionBids, vatAndTax {
   id: number;
   label: string;
   endingTime: string;
@@ -29,7 +29,7 @@ interface IAuctionItem extends location, auctionTimeStamp, identifiers, auctionB
   biddingAgentValue: string;
   remainingTimeInSeconds: number;
   remainingTimeForInstantPurchaseInSeconds?: null;
-  associatedVehicle: associatedVehicle;
+  associatedVehicle: IAssociatedVehicle;
   amIHighestBidder: boolean;
   sellerContact?: string;
   rating?: number;
@@ -56,7 +56,7 @@ interface IAuctionItem extends location, auctionTimeStamp, identifiers, auctionB
   isTransportationAvailable: boolean;
 }
 
-interface associatedVehicle {
+interface IAssociatedVehicle {
   id: number;
   ez: string;
   make: string;
@@ -129,31 +129,31 @@ interface associatedVehicle {
   damages: any[];
   equipmentData: any[];
   equipmentHighlights: any[];
-  vehicleImages: vehicleImages[];
+  vehicleImages: IVehicleImages[];
   tires: [];
   paintState: [];
   technicalState: [];
 }
 
-interface vehicleImages {
+interface IVehicleImages {
   url: string;
   perspective: number;
 }
 
-interface location {
+interface ILocation {
   locationAddress: string;
   locationCity: string;
   locationZip: string;
   locationCountryCode: string;
 }
 
-interface auctionTimeStamp {
+interface IAuctionTimeStamp {
   startedAt: string;
   createdAt: string;
   updatedAt: string;
 }
 
-interface identifiers {
+interface IIdentifiers {
   uuid: string;
   _fk_uuid_vehicle: string;
   _fk_uuid_sellerUser: string;
@@ -161,7 +161,7 @@ interface identifiers {
   _fk_uuid_creatingSellerUser?: string;
 }
 
-interface auctionBids {
+interface IAuctionBids {
   minimumRequiredAsk?: number;
   currentHighestBidValue: number;
   numBids: number;
